@@ -58,7 +58,8 @@ jobs:
           test -s screen-8f2c6d71/digit_outlines_green.png
           grep -q "font-src 'self'" screen-8f2c6d71/index.html
           grep -q "Disallow: /" robots.txt
-          grep -q "y: 232" screen-8f2c6d71/clock.js
+          grep -q "y: 201" screen-8f2c6d71/clock.js
+          grep -q '"opticallyCentred":true' screen-8f2c6d71/digit_targets.js
 
       - name: Browser QC at native and mobile sizes
         run: |
@@ -67,6 +68,8 @@ jobs:
           trap 'kill "$server_pid" 2>/dev/null || true' EXIT
           sleep 2
           python tools/qc_browser.py
+          test -s BROWSER_QC_REPORT.json
+          test -s QC_NATIVE.png
 
       - name: Commit generated production build
         run: |
@@ -76,7 +79,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No generated changes."
           else
-            git commit -m "Move clock numbers higher [generated]"
+            git commit -m "Centre large Open Sans numerals [generated]"
             git push
           fi
 
