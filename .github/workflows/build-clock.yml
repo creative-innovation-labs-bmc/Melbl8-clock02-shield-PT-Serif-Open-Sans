@@ -5,6 +5,9 @@ on:
     branches: ["main"]
     paths:
       - ".github/workflows/build-clock.yml"
+      - "tools/build_clock.py"
+      - "tools/qc_browser.py"
+      - "tools/position_numbers.py"
   workflow_dispatch:
 
 permissions:
@@ -37,11 +40,13 @@ jobs:
           python -m playwright install --with-deps chromium
 
       - name: Build local-font production files
-        run: python tools/build_clock.py
+        run: |
+          python tools/build_clock.py
+          python tools/position_numbers.py
 
       - name: Static checks
         run: |
-          python -m py_compile tools/build_clock.py tools/qc_browser.py
+          python -m py_compile tools/build_clock.py tools/qc_browser.py tools/position_numbers.py
           node --check screen-8f2c6d71/clock.js
           test -s screen-8f2c6d71/fonts/PTSerif-Regular.ttf
           test -s screen-8f2c6d71/fonts/PTSerif-Bold.ttf
@@ -53,6 +58,7 @@ jobs:
           test -s screen-8f2c6d71/digit_outlines_green.png
           grep -q "font-src 'self'" screen-8f2c6d71/index.html
           grep -q "Disallow: /" robots.txt
+          grep -q "y: 232" screen-8f2c6d71/clock.js
 
       - name: Browser QC at native and mobile sizes
         run: |
@@ -70,7 +76,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No generated changes."
           else
-            git commit -m "Build PT Serif and Open Sans Shield variant [generated]"
+            git commit -m "Move clock numbers higher [generated]"
             git push
           fi
 
