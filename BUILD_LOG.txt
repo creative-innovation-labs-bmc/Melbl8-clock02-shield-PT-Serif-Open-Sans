@@ -1,0 +1,13 @@
+Cloning into '/tmp/clock-font-build-6ftoh2a6/source'...
+From https://github.com/creative-innovation-labs-bmc/Melbl8-clock02-shield
+ * branch            bc0416e62e711af0d3aaa3af2ac2cb30cfd77a8f -> FETCH_HEAD
+HEAD is now at bc0416e number y
+Traceback (most recent call last):
+  File "/home/runner/work/Melbl8-clock02-shield-PT-Serif-Open-Sans/Melbl8-clock02-shield-PT-Serif-Open-Sans/tools/position_numbers.py", line 178, in <module>
+    main()
+  File "/home/runner/work/Melbl8-clock02-shield-PT-Serif-Open-Sans/Melbl8-clock02-shield-PT-Serif-Open-Sans/tools/position_numbers.py", line 171, in main
+    shifts = centre_digit_assets(payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Melbl8-clock02-shield-PT-Serif-Open-Sans/Melbl8-clock02-shield-PT-Serif-Open-Sans/tools/position_numbers.py", line 126, in centre_digit_assets
+    raise RuntimeError(
+RuntimeError: Digit 2 centring residual is too large: -1.0, 0.5
