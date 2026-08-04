@@ -1,0 +1,45 @@
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #1C1B1C;
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+#stage {
+  position: relative;
+  width: min(100vw, calc(100vh * 4.776119403));
+  height: min(100vh, calc(100vw / 4.776119403));
+  background: #1C1B1C;
+  contain: strict;
+}
+
+canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#layout-layer { z-index: 0; }
+#blueprint-layer { z-index: 1; }
+#leaf-layer { z-index: 2; }
+
+#debug {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 10;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  font: 12px/1.2 monospace;
+  pointer-events: none;
+}

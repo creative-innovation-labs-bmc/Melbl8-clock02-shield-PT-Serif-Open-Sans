@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+  <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; connect-src 'none'; media-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Screen</title>
+  <link rel="preload" href="fonts/PTSerif-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/OpenSans-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="digit_outlines_grey.png" as="image" type="image/png">
+  <link rel="preload" href="digit_outlines_green.png" as="image" type="image/png">
+  <link rel="preload" href="leaf_atlas.png" as="image" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="stage" aria-label="Melbourne particle clock">
+    <canvas id="layout-layer" width="1920" height="402"></canvas>
+    <canvas id="blueprint-layer" width="1920" height="402"></canvas>
+    <canvas id="leaf-layer" width="1920" height="402"></canvas>
+  </main>
+  <div id="debug" hidden></div>
+  <script src="digit_targets.js"></script>
+  <script src="clock.js"></script>
+</body>
+</html>

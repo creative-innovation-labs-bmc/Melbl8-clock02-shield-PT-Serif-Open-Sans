@@ -1,0 +1,36 @@
+{
+  "sourceCommit": "bc0416e62e711af0d3aaa3af2ac2cb30cfd77a8f",
+  "sourceFonts": {
+    "main": "TEST-MetaPro-Bold",
+    "footer": "MetaSerifWeb W06 Black",
+    "side": "TEST-MetaPro-Medium"
+  },
+  "replacementFonts": {
+    "main": "Open Sans 700",
+    "footer": "PT Serif Regular 400",
+    "side": "Open Sans SemiBold 600"
+  },
+  "digitGeometry": {
+    "fontSize": 460,
+    "renderCentreY": 215,
+    "horizontalScale": 0.97,
+    "score": 0.03502052339745529
+  },
+  "textWidthCompensation": {
+    "footer": 1.0909090909090908,
+    "side": 0.921875
+  },
+  "runtime": {
+    "canvas": [
+      1920,
+      402
+    ],
+    "physicalDisplay": [
+      3840,
+      804
+    ],
+    "targetFps": 30,
+    "particlesPerZone": 220,
+    "externalRuntimeRequests": 0
+  }
+}
