@@ -116,9 +116,9 @@ let targetData = null;
 let outlineGrey = null;
 let outlineGreen = null;
 let leafAtlas = null;
-let footerFont = '400 20px Georgia, serif';
+let footerFont = '700 20px Georgia, serif';
 let sideFont = '600 8px Arial, sans-serif';
-const FOOTER_X_SCALE = 1.0909;
+const FOOTER_X_SCALE = 1.0244;
 const SIDE_X_SCALE = 0.9219;
 let lastSecond = -1;
 let heartbeatStarted = -10000;
@@ -526,7 +526,7 @@ async function start() {
   ]);
 
   await Promise.all([
-    loadOptionalFont('ClockFooter', 'fonts/PTSerif-Regular.ttf', 20, 400),
+    loadOptionalFont('ClockFooter', 'fonts/PTSerif-Bold.ttf', 20, 700),
     loadOptionalFont('ClockSide', 'fonts/OpenSans-SemiBold.ttf', 8, 600)
   ]);
 

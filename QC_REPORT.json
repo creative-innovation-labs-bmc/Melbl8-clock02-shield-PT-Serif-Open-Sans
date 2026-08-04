@@ -7,7 +7,7 @@
   },
   "replacementFonts": {
     "main": "Open Sans 700",
-    "footer": "PT Serif Regular 400",
+    "footer": "PT Serif Bold 700",
     "side": "Open Sans SemiBold 600"
   },
   "digitGeometry": {
@@ -17,7 +17,7 @@
     "score": 0.03502052339745529
   },
   "textWidthCompensation": {
-    "footer": 1.0909090909090908,
+    "footer": 1.024390243902439,
     "side": 0.921875
   },
   "runtime": {

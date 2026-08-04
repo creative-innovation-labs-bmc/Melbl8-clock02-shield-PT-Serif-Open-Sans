@@ -11,7 +11,7 @@ Shield-optimised 3840 × 804 particle clock using locally hosted Aurecon web-bra
 | Role | Source role | Replacement |
 |---|---|---|
 | Large particle numerals | TEST-MetaPro-Bold | Open Sans 700 |
-| Footer time | MetaSerifWeb W06 Black | PT Serif Regular 400 |
+| Footer time | MetaSerifWeb W06 Black | PT Serif Bold 700 |
 | Vertical labels and date | TEST-MetaPro-Medium | Open Sans SemiBold 600 |
 
 The font files and their OFL licences are committed under `screen-8f2c6d71/fonts/`. Runtime playback makes no external font or network requests.
