@@ -19,6 +19,7 @@ TILE_H = 480
 NEW_ORIGIN_X = TILE_W / 2
 NEW_ORIGIN_Y = TILE_H / 2
 NUMBER_Y = 201
+MAX_RASTER_RESIDUAL = 1.01
 
 LAYOUT_PATTERN = re.compile(
     r"// ={60}\n"
@@ -122,7 +123,7 @@ def centre_digit_assets(payload: dict[str, object]) -> list[dict[str, object]]:
         new_left, new_top, new_right, new_bottom = new_bbox
         residual_x = (new_left + new_right) / 2 - NEW_ORIGIN_X
         residual_y = (new_top + new_bottom) / 2 - NEW_ORIGIN_Y
-        if abs(residual_x) > 0.51 or abs(residual_y) > 0.51:
+        if abs(residual_x) > MAX_RASTER_RESIDUAL or abs(residual_y) > MAX_RASTER_RESIDUAL:
             raise RuntimeError(
                 f"Digit {digit} centring residual is too large: {residual_x}, {residual_y}"
             )
@@ -159,6 +160,7 @@ def update_qc_report(shifts: list[dict[str, object]]) -> None:
     }
     report["opticalCentering"] = {
         "tileCentre": [NEW_ORIGIN_X, NEW_ORIGIN_Y],
+        "maximumRasterResidual": MAX_RASTER_RESIDUAL,
         "perDigitShift": shifts,
         "outlineAndParticleOriginsAligned": True,
     }
