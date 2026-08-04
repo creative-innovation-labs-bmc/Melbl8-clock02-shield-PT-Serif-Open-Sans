@@ -1,0 +1,74 @@
+name: Build and QC Aurecon font variant
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/build-clock.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-clock
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out target repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install build and browser dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pillow numpy fonttools brotli playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Build local-font production files
+        run: python tools/build_clock.py
+
+      - name: Static checks
+        run: |
+          python -m py_compile tools/build_clock.py tools/qc_browser.py
+          node --check screen-8f2c6d71/clock.js
+          test -s screen-8f2c6d71/fonts/PTSerif-Regular.ttf
+          test -s screen-8f2c6d71/fonts/OpenSans-SemiBold.ttf
+          test -s screen-8f2c6d71/fonts/OpenSans-Bold.ttf
+          test -s screen-8f2c6d71/fonts/OpenSans-ExtraBold.ttf
+          test -s screen-8f2c6d71/digit_targets.js
+          test -s screen-8f2c6d71/digit_outlines_grey.png
+          test -s screen-8f2c6d71/digit_outlines_green.png
+          grep -q "font-src 'self'" screen-8f2c6d71/index.html
+          grep -q "Disallow: /" robots.txt
+
+      - name: Browser QC at native and mobile sizes
+        run: |
+          python -m http.server 8000 >/tmp/clock-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          sleep 2
+          python tools/qc_browser.py
+
+      - name: Commit generated production build
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No generated changes."
+          else
+            git commit -m "Build PT Serif and Open Sans Shield variant [generated]"
+            git push
+          fi
