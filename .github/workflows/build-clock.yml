@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: build-clock
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -71,5 +71,27 @@ jobs:
             echo "No generated changes."
           else
             git commit -m "Build PT Serif and Open Sans Shield variant [generated]"
+            git push
+          fi
+
+      - name: Record build result
+        if: always()
+        env:
+          BUILD_RESULT: ${{ job.status }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          {
+            echo "# Build status"
+            echo
+            echo "Result: ${BUILD_RESULT}"
+            echo "Recorded: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            echo "Source workflow commit: ${GITHUB_SHA}"
+          } > BUILD_STATUS.md
+          git add BUILD_STATUS.md
+          if git diff --cached --quiet; then
+            echo "Build status is unchanged."
+          else
+            git commit -m "Record clock build result: ${BUILD_RESULT} [skip ci]"
             git push
           fi
