@@ -41,33 +41,39 @@ jobs:
 
       - name: Build local-font production files
         run: |
-          python tools/build_clock.py
-          python tools/position_numbers.py
+          set -o pipefail
+          : > BUILD_LOG.txt
+          python tools/build_clock.py 2>&1 | tee -a BUILD_LOG.txt
+          python tools/position_numbers.py 2>&1 | tee -a BUILD_LOG.txt
 
       - name: Static checks
         run: |
-          python -m py_compile tools/build_clock.py tools/qc_browser.py tools/position_numbers.py
-          node --check screen-8f2c6d71/clock.js
-          test -s screen-8f2c6d71/fonts/PTSerif-Regular.ttf
-          test -s screen-8f2c6d71/fonts/PTSerif-Bold.ttf
-          test -s screen-8f2c6d71/fonts/OpenSans-SemiBold.ttf
-          test -s screen-8f2c6d71/fonts/OpenSans-Bold.ttf
-          test -s screen-8f2c6d71/fonts/OpenSans-ExtraBold.ttf
-          test -s screen-8f2c6d71/digit_targets.js
-          test -s screen-8f2c6d71/digit_outlines_grey.png
-          test -s screen-8f2c6d71/digit_outlines_green.png
-          grep -q "font-src 'self'" screen-8f2c6d71/index.html
-          grep -q "Disallow: /" robots.txt
-          grep -q "y: 201" screen-8f2c6d71/clock.js
-          grep -q '"opticallyCentred":true' screen-8f2c6d71/digit_targets.js
+          set -o pipefail
+          {
+            python -m py_compile tools/build_clock.py tools/qc_browser.py tools/position_numbers.py
+            node --check screen-8f2c6d71/clock.js
+            test -s screen-8f2c6d71/fonts/PTSerif-Regular.ttf
+            test -s screen-8f2c6d71/fonts/PTSerif-Bold.ttf
+            test -s screen-8f2c6d71/fonts/OpenSans-SemiBold.ttf
+            test -s screen-8f2c6d71/fonts/OpenSans-Bold.ttf
+            test -s screen-8f2c6d71/fonts/OpenSans-ExtraBold.ttf
+            test -s screen-8f2c6d71/digit_targets.js
+            test -s screen-8f2c6d71/digit_outlines_grey.png
+            test -s screen-8f2c6d71/digit_outlines_green.png
+            grep -q "font-src 'self'" screen-8f2c6d71/index.html
+            grep -q "Disallow: /" robots.txt
+            grep -q "y: 201" screen-8f2c6d71/clock.js
+            grep -q '"opticallyCentred":true' screen-8f2c6d71/digit_targets.js
+          } 2>&1 | tee -a BUILD_LOG.txt
 
       - name: Browser QC at native and mobile sizes
         run: |
+          set -o pipefail
           python -m http.server 8000 >/tmp/clock-http.log 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid" 2>/dev/null || true' EXIT
           sleep 2
-          python tools/qc_browser.py
+          python tools/qc_browser.py 2>&1 | tee -a BUILD_LOG.txt
           test -s BROWSER_QC_REPORT.json
           test -s QC_NATIVE.png
 
@@ -98,6 +104,7 @@ jobs:
             echo "Source workflow commit: ${GITHUB_SHA}"
           } > BUILD_STATUS.md
           git add BUILD_STATUS.md
+          if [ -f BUILD_LOG.txt ]; then git add BUILD_LOG.txt; fi
           if git diff --cached --quiet; then
             echo "Build status is unchanged."
           else
