@@ -77,7 +77,6 @@ def instantiate_open_sans(variable_path: Path, output_path: Path, weight: int) -
 
 
 def mulberry32_sequence(seed: int, count: int) -> list[float]:
-    # Exact unsigned 32-bit equivalent of the generator previously used in clock.js.
     values: list[float] = []
     state = seed & 0xFFFFFFFF
     for _ in range(count):
@@ -103,14 +102,10 @@ def render_digit_mask(
     centre_y: int,
     x_scale: float,
 ) -> Image.Image:
-    # Render at high resolution before downsampling to keep the outlines stable.
     supersample = 2
     font = ImageFont.truetype(str(font_path), font_size * supersample)
     large = Image.new("L", (TILE_W * supersample, TILE_H * supersample), 0)
     draw = ImageDraw.Draw(large)
-
-    # Pillow's "mm" anchor centres the visible glyph. The vertical offset is
-    # searched against the source target geometry below.
     draw.text(
         (TILE_W * supersample / 2, centre_y * supersample),
         digit,
@@ -203,7 +198,6 @@ def geometry_score(
         candidate = sampled_targets(mask, digit)
         original_signature = point_signature(original_targets[digit])
         candidate_signature = point_signature(candidate)
-        # Normalise pixel-scale differences to keep width, height and placement balanced.
         delta = (candidate_signature - original_signature) / np.array(
             [80, 80, 80, 80, 80, 150, 150, 150, 150, 150, 80, 150],
             dtype=np.float64,
@@ -245,8 +239,6 @@ def choose_digit_geometry(
 
 
 def colourise_outline(mask: Image.Image, colour: tuple[int, int, int]) -> Image.Image:
-    # A two-pixel internal/external contour stays clear after the runtime's
-    # repeated low-alpha transforms.
     expanded = mask.filter(ImageFilter.MaxFilter(5))
     contracted = mask.filter(ImageFilter.MinFilter(5))
     outer = np.asarray(expanded, dtype=np.int16)
@@ -311,7 +303,7 @@ def measured_width(font_path: Path, size: int, text: str) -> float:
 def replace_clock_fonts(clock_js: str, footer_scale: float, side_scale: float) -> str:
     clock_js = clock_js.replace(
         "let footerFont = '700 20px Georgia, serif';",
-        "let footerFont = '400 20px Georgia, serif';",
+        "let footerFont = '700 20px Georgia, serif';",
     )
     clock_js = clock_js.replace(
         "let sideFont = '600 8px Arial, sans-serif';",
@@ -390,7 +382,7 @@ def replace_clock_fonts(clock_js: str, footer_scale: float, side_scale: float) -
     loadOptionalFont('ClockSide', 'MP-M.ttf', 8)
   ]);"""
     new_loads = """  await Promise.all([
-    loadOptionalFont('ClockFooter', 'fonts/PTSerif-Regular.ttf', 20, 400),
+    loadOptionalFont('ClockFooter', 'fonts/PTSerif-Bold.ttf', 20, 700),
     loadOptionalFont('ClockSide', 'fonts/OpenSans-SemiBold.ttf', 8, 600)
   ]);"""
     if old_loads not in clock_js:
@@ -399,7 +391,7 @@ def replace_clock_fonts(clock_js: str, footer_scale: float, side_scale: float) -
 
 
 def enhance_index(index_html: str) -> str:
-    preloads = """  <link rel="preload" href="fonts/PTSerif-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    preloads = """  <link rel="preload" href="fonts/PTSerif-Bold.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="fonts/OpenSans-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="digit_outlines_grey.png" as="image" type="image/png">
   <link rel="preload" href="digit_outlines_green.png" as="image" type="image/png">
@@ -434,7 +426,7 @@ Shield-optimised 3840 × 804 particle clock using locally hosted Aurecon web-bra
 | Role | Source role | Replacement |
 |---|---|---|
 | Large particle numerals | {original_names['main']} | Open Sans {chosen_weight} |
-| Footer time | {original_names['footer']} | PT Serif Regular 400 |
+| Footer time | {original_names['footer']} | PT Serif Bold 700 |
 | Vertical labels and date | {original_names['side']} | Open Sans SemiBold 600 |
 
 The font files and their OFL licences are committed under `screen-8f2c6d71/fonts/`. Runtime playback makes no external font or network requests.
@@ -483,7 +475,6 @@ def main() -> None:
             shutil.copy2(source / name, ROOT / name)
         (ROOT / ".nojekyll").touch()
 
-        # Remove starter files and obsolete runtime assets from this variant.
         for relative in ("styles.css", "app.js", "PROJECT_BRIEF.md", ".factory-complete"):
             path = ROOT / relative
             if path.exists():
@@ -539,9 +530,8 @@ def main() -> None:
             score,
         )
 
-        # Match text widths to their source roles while retaining each replacement's real vertical metrics.
         original_footer_width = measured_width(source_screen / "MS-Bk.otf", 20, "00:00:00")
-        new_footer_width = measured_width(fonts_dir / "PTSerif-Regular.ttf", 20, "00:00:00")
+        new_footer_width = measured_width(fonts_dir / "PTSerif-Bold.ttf", 20, "00:00:00")
         footer_scale = max(0.82, min(1.18, original_footer_width / max(1.0, new_footer_width)))
 
         side_sample = "30 SEPTEMBER 2026 WEDNESDAY"
@@ -566,7 +556,7 @@ def main() -> None:
             "sourceFonts": original_names,
             "replacementFonts": {
                 "main": f"Open Sans {chosen_weight}",
-                "footer": "PT Serif Regular 400",
+                "footer": "PT Serif Bold 700",
                 "side": "Open Sans SemiBold 600",
             },
             "digitGeometry": {
