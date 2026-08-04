@@ -44,6 +44,7 @@ jobs:
           python -m py_compile tools/build_clock.py tools/qc_browser.py
           node --check screen-8f2c6d71/clock.js
           test -s screen-8f2c6d71/fonts/PTSerif-Regular.ttf
+          test -s screen-8f2c6d71/fonts/PTSerif-Bold.ttf
           test -s screen-8f2c6d71/fonts/OpenSans-SemiBold.ttf
           test -s screen-8f2c6d71/fonts/OpenSans-Bold.ttf
           test -s screen-8f2c6d71/fonts/OpenSans-ExtraBold.ttf
