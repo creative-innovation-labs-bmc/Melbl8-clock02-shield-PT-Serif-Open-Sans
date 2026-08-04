@@ -31,7 +31,7 @@ def check_view(page, width: int, height: int, native: bool) -> dict[str, object]
             stage: {width: stage.width, height: stage.height, x: stage.x, y: stage.y},
             canvases,
             stats: window.clockStats,
-            footerFont: document.fonts.check('400 20px "ClockFooter"'),
+            footerFont: document.fonts.check('700 20px "ClockFooter"'),
             sideFont: document.fonts.check('600 8px "ClockSide"')
           };
         }"""
@@ -39,7 +39,7 @@ def check_view(page, width: int, height: int, native: bool) -> dict[str, object]
 
     assert len(result["canvases"]) == 3
     assert all(item["width"] == 1920 and item["height"] == 402 for item in result["canvases"])
-    assert result["footerFont"], "PT Serif did not load"
+    assert result["footerFont"], "PT Serif Bold did not load"
     assert result["sideFont"], "Open Sans did not load"
     assert result["stats"]["fps"] >= 18, result["stats"]
     ratio = result["stage"]["width"] / result["stage"]["height"]
