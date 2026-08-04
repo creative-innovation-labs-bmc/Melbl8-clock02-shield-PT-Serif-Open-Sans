@@ -42,12 +42,13 @@ const BASE_H = 402;
 const ZONE_W = BASE_W / 4;
 // ============================================================
 // NUMBER LAYOUT TUNING
-// Internal canvas is 1920 x 402 and is doubled to 3840 x 804.
-// y: 232 means the number centre sits at 464 px on the physical wall.
+// The generated glyph artwork is optically centred in each 480 x 402 zone.
+// Internal y: 201 is the exact centre of the 402 px canvas.
+// On the 3840 x 804 wall this places the visual centre at y: 402.
 // ============================================================
 const NUMBER_LAYOUT = {
-  scale: 0.88, // 90% of the previous number size
-  y: 232       // moved 10 internal px higher to prevent bottom cropping
+  scale: 0.88,
+  y: 201
 };
 
 window.NUMBER_LAYOUT_CONFIG = NUMBER_LAYOUT;

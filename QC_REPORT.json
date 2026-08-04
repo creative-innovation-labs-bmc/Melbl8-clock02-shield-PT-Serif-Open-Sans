@@ -32,5 +32,98 @@
     "targetFps": 30,
     "particlesPerZone": 220,
     "externalRuntimeRequests": 0
+  },
+  "numberLayout": {
+    "internalCanvas": [
+      1920,
+      402
+    ],
+    "zoneSize": [
+      480,
+      402
+    ],
+    "scale": 0.88,
+    "centreY": 201,
+    "physicalCentreY": 402
+  },
+  "opticalCentering": {
+    "tileCentre": [
+      180.0,
+      240.0
+    ],
+    "maximumRasterResidual": 1.01,
+    "perDigitShift": [
+      {
+        "digit": 0,
+        "x": 0,
+        "y": 11,
+        "residualX": 0.0,
+        "residualY": 0.0
+      },
+      {
+        "digit": 1,
+        "x": 22,
+        "y": 11,
+        "residualX": -0.5,
+        "residualY": 0.0
+      },
+      {
+        "digit": 2,
+        "x": -2,
+        "y": 14,
+        "residualX": -1.0,
+        "residualY": 0.5
+      },
+      {
+        "digit": 3,
+        "x": 0,
+        "y": 11,
+        "residualX": -0.5,
+        "residualY": 0.0
+      },
+      {
+        "digit": 4,
+        "x": 0,
+        "y": 11,
+        "residualX": 0.5,
+        "residualY": 0.0
+      },
+      {
+        "digit": 5,
+        "x": -1,
+        "y": 8,
+        "residualX": 0.0,
+        "residualY": -0.5
+      },
+      {
+        "digit": 6,
+        "x": 0,
+        "y": 11,
+        "residualX": 0.5,
+        "residualY": 0.0
+      },
+      {
+        "digit": 7,
+        "x": 1,
+        "y": 11,
+        "residualX": -0.5,
+        "residualY": 0.0
+      },
+      {
+        "digit": 8,
+        "x": 0,
+        "y": 11,
+        "residualX": 0.0,
+        "residualY": 0.0
+      },
+      {
+        "digit": 9,
+        "x": 1,
+        "y": 11,
+        "residualX": 0.0,
+        "residualY": 0.0
+      }
+    ],
+    "outlineAndParticleOriginsAligned": true
   }
 }
