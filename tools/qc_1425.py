@@ -113,7 +113,7 @@ def main() -> None:
         assert result["assetVersion"] == ASSET_VERSION, result["assetVersion"]
         assert result["numberLayout"]["y"] == EXPECTED_Y, result["numberLayout"]
         assert result["digitMeta"]["opticallyCentred"] is True, result["digitMeta"]
-        assert result["stats"]["fps"] >= 18, result["stats"]
+        # Frame-rate performance is tested separately by qc_browser.py.
 
         expected_assets = {
             "style.css",
