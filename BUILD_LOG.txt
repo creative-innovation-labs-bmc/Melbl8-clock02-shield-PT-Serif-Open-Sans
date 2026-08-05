@@ -1,4 +1,4 @@
-Cloning into '/tmp/clock-font-build-ekhc1vod/source'...
+Cloning into '/tmp/clock-font-build-1xhlak2a/source'...
 From https://github.com/creative-innovation-labs-bmc/Melbl8-clock02-shield
  * branch            bc0416e62e711af0d3aaa3af2ac2cb30cfd77a8f -> FETCH_HEAD
 HEAD is now at bc0416e number y
@@ -34,9 +34,9 @@ Versioned all browser assets with 20260805-1425-centre-v1.
       }
     ],
     "stats": {
-      "fps": 19.7,
-      "leafMs": 0.65,
-      "blueprintMs": 0.11,
+      "fps": 19,
+      "leafMs": 0.64,
+      "blueprintMs": 0.14,
       "leaves": 880
     },
     "footerFont": true,
@@ -219,23 +219,23 @@ Versioned all browser assets with 20260805-1425-centre-v1.
     "leafBounds": [
       {
         "minX": 133,
-        "maxX": 343,
+        "maxX": 342,
         "minY": 44,
         "maxY": 352,
-        "centreX": 238,
+        "centreX": 237.5,
         "centreY": 198,
-        "width": 211,
+        "width": 210,
         "height": 309
       },
       {
         "minX": 612,
         "maxX": 828,
         "minY": 43,
-        "maxY": 352,
+        "maxY": 351,
         "centreX": 720,
-        "centreY": 197.5,
+        "centreY": 197,
         "width": 217,
-        "height": 310
+        "height": 309
       },
       {
         "minX": 1092,
@@ -262,42 +262,42 @@ Versioned all browser assets with 20260805-1425-centre-v1.
       {
         "minX": 123,
         "maxX": 360,
-        "minY": 38,
-        "maxY": 370,
+        "minY": 37,
+        "maxY": 371,
         "centreX": 241.5,
         "centreY": 204,
         "width": 238,
-        "height": 333
+        "height": 335
       },
       {
         "minX": 599,
-        "maxX": 839,
+        "maxX": 840,
         "minY": 30,
         "maxY": 367,
-        "centreX": 719,
+        "centreX": 719.5,
         "centreY": 198.5,
-        "width": 241,
+        "width": 242,
         "height": 338
       },
       {
-        "minX": 1084,
-        "maxX": 1318,
-        "minY": 38,
+        "minX": 1085,
+        "maxX": 1317,
+        "minY": 37,
         "maxY": 370,
         "centreX": 1201,
-        "centreY": 204,
-        "width": 235,
-        "height": 333
+        "centreY": 203.5,
+        "width": 233,
+        "height": 334
       },
       {
         "minX": 1560,
         "maxX": 1799,
         "minY": 31,
-        "maxY": 365,
+        "maxY": 364,
         "centreX": 1679.5,
-        "centreY": 198,
+        "centreY": 197.5,
         "width": 240,
-        "height": 335
+        "height": 334
       }
     ]
   },
@@ -329,7 +329,7 @@ Versioned all browser assets with 20260805-1425-centre-v1.
       }
     ],
     "stats": {
-      "fps": 20.3,
+      "fps": 19.7,
       "leafMs": 0.62,
       "blueprintMs": 0.12,
       "leaves": 880
@@ -514,23 +514,23 @@ Versioned all browser assets with 20260805-1425-centre-v1.
     "leafBounds": [
       {
         "minX": 133,
-        "maxX": 343,
+        "maxX": 342,
         "minY": 44,
         "maxY": 352,
-        "centreX": 238,
+        "centreX": 237.5,
         "centreY": 198,
-        "width": 211,
+        "width": 210,
         "height": 309
       },
       {
         "minX": 612,
         "maxX": 828,
         "minY": 43,
-        "maxY": 352,
+        "maxY": 351,
         "centreX": 720,
-        "centreY": 197.5,
+        "centreY": 197,
         "width": 217,
-        "height": 310
+        "height": 309
       },
       {
         "minX": 1092,
@@ -600,11 +600,11 @@ Versioned all browser assets with 20260805-1425-centre-v1.
   "pageErrors": [],
   "remoteRequests": []
 }
-14:25 QC failed: {'fps': 17.4, 'leafMs': 0.66, 'blueprintMs': 0.12, 'leaves': 880}
+14:25 QC failed: (0, {'minX': 149, 'maxX': 349, 'minY': 38, 'maxY': 370, 'centreX': 249, 'centreY': 204, 'width': 201, 'height': 333}, 240.0)
 Traceback (most recent call last):
   File "/home/runner/work/Melbl8-clock02-shield-PT-Serif-Open-Sans/Melbl8-clock02-shield-PT-Serif-Open-Sans/tools/qc_1425.py", line 171, in <module>
     main()
-  File "/home/runner/work/Melbl8-clock02-shield-PT-Serif-Open-Sans/Melbl8-clock02-shield-PT-Serif-Open-Sans/tools/qc_1425.py", line 116, in main
-    assert result["stats"]["fps"] >= 18, result["stats"]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AssertionError: {'fps': 17.4, 'leafMs': 0.66, 'blueprintMs': 0.12, 'leaves': 880}
+  File "/home/runner/work/Melbl8-clock02-shield-PT-Serif-Open-Sans/Melbl8-clock02-shield-PT-Serif-Open-Sans/tools/qc_1425.py", line 144, in main
+    assert abs(outline["centreX"] - expected_x) <= 8, (zone, outline, expected_x)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (0, {'minX': 149, 'maxX': 349, 'minY': 38, 'maxY': 370, 'centreX': 249, 'centreY': 204, 'width': 201, 'height': 333}, 240.0)
