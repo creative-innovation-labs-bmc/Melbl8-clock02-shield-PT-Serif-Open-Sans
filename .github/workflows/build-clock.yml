@@ -7,7 +7,9 @@ on:
       - ".github/workflows/build-clock.yml"
       - "tools/build_clock.py"
       - "tools/qc_browser.py"
+      - "tools/qc_1425.py"
       - "tools/position_numbers.py"
+      - "tools/version_assets.py"
   workflow_dispatch:
 
 permissions:
@@ -45,12 +47,13 @@ jobs:
           : > BUILD_LOG.txt
           python tools/build_clock.py 2>&1 | tee -a BUILD_LOG.txt
           python tools/position_numbers.py 2>&1 | tee -a BUILD_LOG.txt
+          python tools/version_assets.py 2>&1 | tee -a BUILD_LOG.txt
 
       - name: Static checks
         run: |
           set -o pipefail
           {
-            python -m py_compile tools/build_clock.py tools/qc_browser.py tools/position_numbers.py
+            python -m py_compile tools/build_clock.py tools/qc_browser.py tools/qc_1425.py tools/position_numbers.py tools/version_assets.py
             node --check screen-8f2c6d71/clock.js
             test -s screen-8f2c6d71/fonts/PTSerif-Regular.ttf
             test -s screen-8f2c6d71/fonts/PTSerif-Bold.ttf
@@ -64,6 +67,8 @@ jobs:
             grep -q "Disallow: /" robots.txt
             grep -q "y: 201" screen-8f2c6d71/clock.js
             grep -q '"opticallyCentred":true' screen-8f2c6d71/digit_targets.js
+            grep -q "20260805-1425-centre-v1" screen-8f2c6d71/index.html
+            grep -q "CLOCK_ASSET_VERSION" screen-8f2c6d71/clock.js
           } 2>&1 | tee -a BUILD_LOG.txt
 
       - name: Browser QC at native and mobile sizes
@@ -74,8 +79,11 @@ jobs:
           trap 'kill "$server_pid" 2>/dev/null || true' EXIT
           sleep 2
           python tools/qc_browser.py 2>&1 | tee -a BUILD_LOG.txt
+          python tools/qc_1425.py 2>&1 | tee -a BUILD_LOG.txt
           test -s BROWSER_QC_REPORT.json
           test -s QC_NATIVE.png
+          test -s QC_1425_REPORT.json
+          test -s QC_1425.png
 
       - name: Commit generated production build
         run: |
@@ -85,7 +93,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No generated changes."
           else
-            git commit -m "Centre large Open Sans numerals [generated]"
+            git commit -m "Version assets and QC 14-25 alignment [generated]"
             git push
           fi
 
