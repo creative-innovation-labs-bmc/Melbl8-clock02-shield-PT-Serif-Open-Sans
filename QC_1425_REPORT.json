@@ -1,0 +1,212 @@
+{
+  "fixedDisplayTime": "14:25:54",
+  "assetVersion": "20260805-1425-centre-v1",
+  "result": {
+    "stage": {
+      "width": 3840,
+      "height": 804,
+      "x": 0,
+      "y": 0
+    },
+    "canvas": {
+      "width": 1920,
+      "height": 402
+    },
+    "stats": {
+      "fps": 17.7,
+      "leafMs": 0.71,
+      "blueprintMs": 0.14,
+      "leaves": 880
+    },
+    "assetVersion": "20260805-1425-centre-v1",
+    "numberLayout": {
+      "scale": 0.88,
+      "y": 201
+    },
+    "digitMeta": {
+      "tileWidth": 360,
+      "tileHeight": 480,
+      "digitY": 240,
+      "particleCount": 220,
+      "fontFamily": "Open Sans",
+      "fontWeight": 700,
+      "fontSize": 460,
+      "renderCentreY": 215,
+      "horizontalScale": 0.97,
+      "geometryScore": 0.03502052,
+      "opticallyCentred": true,
+      "tileCentre": [
+        180,
+        240
+      ],
+      "perDigitShift": [
+        {
+          "digit": 0,
+          "x": 0,
+          "y": 11,
+          "residualX": 0,
+          "residualY": 0
+        },
+        {
+          "digit": 1,
+          "x": 22,
+          "y": 11,
+          "residualX": -0.5,
+          "residualY": 0
+        },
+        {
+          "digit": 2,
+          "x": -2,
+          "y": 14,
+          "residualX": -1,
+          "residualY": 0.5
+        },
+        {
+          "digit": 3,
+          "x": 0,
+          "y": 11,
+          "residualX": -0.5,
+          "residualY": 0
+        },
+        {
+          "digit": 4,
+          "x": 0,
+          "y": 11,
+          "residualX": 0.5,
+          "residualY": 0
+        },
+        {
+          "digit": 5,
+          "x": -1,
+          "y": 8,
+          "residualX": 0,
+          "residualY": -0.5
+        },
+        {
+          "digit": 6,
+          "x": 0,
+          "y": 11,
+          "residualX": 0.5,
+          "residualY": 0
+        },
+        {
+          "digit": 7,
+          "x": 1,
+          "y": 11,
+          "residualX": -0.5,
+          "residualY": 0
+        },
+        {
+          "digit": 8,
+          "x": 0,
+          "y": 11,
+          "residualX": 0,
+          "residualY": 0
+        },
+        {
+          "digit": 9,
+          "x": 1,
+          "y": 11,
+          "residualX": 0,
+          "residualY": 0
+        }
+      ]
+    },
+    "leaves": [
+      {
+        "minX": 168,
+        "maxX": 316,
+        "minY": 44,
+        "maxY": 354,
+        "centreX": 242,
+        "centreY": 199,
+        "width": 149,
+        "height": 311
+      },
+      {
+        "minX": 596,
+        "maxX": 831,
+        "minY": 44,
+        "maxY": 358,
+        "centreX": 713.5,
+        "centreY": 201,
+        "width": 236,
+        "height": 315
+      },
+      {
+        "minX": 1088,
+        "maxX": 1309,
+        "minY": 48,
+        "maxY": 361,
+        "centreX": 1198.5,
+        "centreY": 204.5,
+        "width": 222,
+        "height": 314
+      },
+      {
+        "minX": 1578,
+        "maxX": 1781,
+        "minY": 41,
+        "maxY": 354,
+        "centreX": 1679.5,
+        "centreY": 197.5,
+        "width": 204,
+        "height": 314
+      }
+    ],
+    "outlines": [
+      {
+        "minX": 149,
+        "maxX": 349,
+        "minY": 39,
+        "maxY": 369,
+        "centreX": 249,
+        "centreY": 204,
+        "width": 201,
+        "height": 331
+      },
+      {
+        "minX": 592,
+        "maxX": 850,
+        "minY": 32,
+        "maxY": 368,
+        "centreX": 721,
+        "centreY": 200,
+        "width": 259,
+        "height": 337
+      },
+      {
+        "minX": 1077,
+        "maxX": 1328,
+        "minY": 39,
+        "maxY": 373,
+        "centreX": 1202.5,
+        "centreY": 206,
+        "width": 252,
+        "height": 335
+      },
+      {
+        "minX": 1560,
+        "maxX": 1792,
+        "minY": 25,
+        "maxY": 362,
+        "centreX": 1676,
+        "centreY": 193.5,
+        "width": 233,
+        "height": 338
+      }
+    ],
+    "resourceUrls": [
+      "http://127.0.0.1:8000/screen-8f2c6d71/fonts/PTSerif-Bold.ttf?v=20260805-1425-centre-v1",
+      "http://127.0.0.1:8000/screen-8f2c6d71/fonts/OpenSans-SemiBold.ttf?v=20260805-1425-centre-v1",
+      "http://127.0.0.1:8000/screen-8f2c6d71/digit_outlines_green.png?v=20260805-1425-centre-v1",
+      "http://127.0.0.1:8000/screen-8f2c6d71/digit_outlines_grey.png?v=20260805-1425-centre-v1",
+      "http://127.0.0.1:8000/screen-8f2c6d71/leaf_atlas.png?v=20260805-1425-centre-v1",
+      "http://127.0.0.1:8000/screen-8f2c6d71/style.css?v=20260805-1425-centre-v1",
+      "http://127.0.0.1:8000/screen-8f2c6d71/digit_targets.js?v=20260805-1425-centre-v1",
+      "http://127.0.0.1:8000/screen-8f2c6d71/clock.js?v=20260805-1425-centre-v1"
+    ]
+  },
+  "consoleErrors": [],
+  "pageErrors": []
+}

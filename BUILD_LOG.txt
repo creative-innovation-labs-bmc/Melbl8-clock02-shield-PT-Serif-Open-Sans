@@ -1,4 +1,4 @@
-Cloning into '/tmp/clock-font-build-1xhlak2a/source'...
+Cloning into '/tmp/clock-font-build-ubc_yhwb/source'...
 From https://github.com/creative-innovation-labs-bmc/Melbl8-clock02-shield
  * branch            bc0416e62e711af0d3aaa3af2ac2cb30cfd77a8f -> FETCH_HEAD
 HEAD is now at bc0416e number y
@@ -34,8 +34,8 @@ Versioned all browser assets with 20260805-1425-centre-v1.
       }
     ],
     "stats": {
-      "fps": 19,
-      "leafMs": 0.64,
+      "fps": 20,
+      "leafMs": 0.63,
       "blueprintMs": 0.14,
       "leaves": 880
     },
@@ -262,42 +262,42 @@ Versioned all browser assets with 20260805-1425-centre-v1.
       {
         "minX": 123,
         "maxX": 360,
-        "minY": 37,
-        "maxY": 371,
+        "minY": 38,
+        "maxY": 370,
         "centreX": 241.5,
         "centreY": 204,
         "width": 238,
-        "height": 335
+        "height": 333
       },
       {
         "minX": 599,
-        "maxX": 840,
+        "maxX": 839,
         "minY": 30,
         "maxY": 367,
-        "centreX": 719.5,
+        "centreX": 719,
         "centreY": 198.5,
-        "width": 242,
+        "width": 241,
         "height": 338
       },
       {
         "minX": 1085,
         "maxX": 1317,
-        "minY": 37,
+        "minY": 38,
         "maxY": 370,
         "centreX": 1201,
-        "centreY": 203.5,
+        "centreY": 204,
         "width": 233,
-        "height": 334
+        "height": 333
       },
       {
         "minX": 1560,
         "maxX": 1799,
         "minY": 31,
-        "maxY": 364,
+        "maxY": 365,
         "centreX": 1679.5,
-        "centreY": 197.5,
+        "centreY": 198,
         "width": 240,
-        "height": 334
+        "height": 335
       }
     ]
   },
@@ -329,9 +329,9 @@ Versioned all browser assets with 20260805-1425-centre-v1.
       }
     ],
     "stats": {
-      "fps": 19.7,
+      "fps": 20.3,
       "leafMs": 0.62,
-      "blueprintMs": 0.12,
+      "blueprintMs": 0.13,
       "leaves": 880
     },
     "footerFont": true,
@@ -514,54 +514,54 @@ Versioned all browser assets with 20260805-1425-centre-v1.
     "leafBounds": [
       {
         "minX": 133,
-        "maxX": 342,
-        "minY": 44,
-        "maxY": 352,
-        "centreX": 237.5,
-        "centreY": 198,
-        "width": 210,
-        "height": 309
+        "maxX": 343,
+        "minY": 43,
+        "maxY": 349,
+        "centreX": 238,
+        "centreY": 196,
+        "width": 211,
+        "height": 307
       },
       {
         "minX": 612,
-        "maxX": 828,
+        "maxX": 829,
         "minY": 43,
-        "maxY": 351,
-        "centreX": 720,
-        "centreY": 197,
-        "width": 217,
-        "height": 309
-      },
-      {
-        "minX": 1092,
-        "maxX": 1306,
-        "minY": 45,
-        "maxY": 354,
-        "centreX": 1199,
-        "centreY": 199.5,
-        "width": 215,
+        "maxY": 352,
+        "centreX": 720.5,
+        "centreY": 197.5,
+        "width": 218,
         "height": 310
       },
       {
-        "minX": 1570,
-        "maxX": 1788,
-        "minY": 46,
+        "minX": 1092,
+        "maxX": 1303,
+        "minY": 48,
         "maxY": 354,
-        "centreX": 1679,
-        "centreY": 200,
-        "width": 219,
-        "height": 309
+        "centreX": 1197.5,
+        "centreY": 201,
+        "width": 212,
+        "height": 307
+      },
+      {
+        "minX": 1570,
+        "maxX": 1789,
+        "minY": 46,
+        "maxY": 355,
+        "centreX": 1679.5,
+        "centreY": 200.5,
+        "width": 220,
+        "height": 310
       }
     ],
     "blueprintBounds": [
       {
-        "minX": 123,
+        "minX": 124,
         "maxX": 360,
         "minY": 37,
         "maxY": 371,
-        "centreX": 241.5,
+        "centreX": 242,
         "centreY": 204,
-        "width": 238,
+        "width": 237,
         "height": 335
       },
       {
@@ -578,21 +578,21 @@ Versioned all browser assets with 20260805-1425-centre-v1.
         "minX": 1085,
         "maxX": 1317,
         "minY": 37,
-        "maxY": 370,
+        "maxY": 371,
         "centreX": 1201,
-        "centreY": 203.5,
+        "centreY": 204,
         "width": 233,
-        "height": 334
+        "height": 335
       },
       {
-        "minX": 1560,
+        "minX": 1561,
         "maxX": 1799,
-        "minY": 31,
+        "minY": 32,
         "maxY": 364,
-        "centreX": 1679.5,
-        "centreY": 197.5,
-        "width": 240,
-        "height": 334
+        "centreX": 1680,
+        "centreY": 198,
+        "width": 239,
+        "height": 333
       }
     ]
   },
@@ -600,11 +600,215 @@ Versioned all browser assets with 20260805-1425-centre-v1.
   "pageErrors": [],
   "remoteRequests": []
 }
-14:25 QC failed: (0, {'minX': 149, 'maxX': 349, 'minY': 38, 'maxY': 370, 'centreX': 249, 'centreY': 204, 'width': 201, 'height': 333}, 240.0)
-Traceback (most recent call last):
-  File "/home/runner/work/Melbl8-clock02-shield-PT-Serif-Open-Sans/Melbl8-clock02-shield-PT-Serif-Open-Sans/tools/qc_1425.py", line 171, in <module>
-    main()
-  File "/home/runner/work/Melbl8-clock02-shield-PT-Serif-Open-Sans/Melbl8-clock02-shield-PT-Serif-Open-Sans/tools/qc_1425.py", line 144, in main
-    assert abs(outline["centreX"] - expected_x) <= 8, (zone, outline, expected_x)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AssertionError: (0, {'minX': 149, 'maxX': 349, 'minY': 38, 'maxY': 370, 'centreX': 249, 'centreY': 204, 'width': 201, 'height': 333}, 240.0)
+{
+  "fixedDisplayTime": "14:25:54",
+  "assetVersion": "20260805-1425-centre-v1",
+  "result": {
+    "stage": {
+      "width": 3840,
+      "height": 804,
+      "x": 0,
+      "y": 0
+    },
+    "canvas": {
+      "width": 1920,
+      "height": 402
+    },
+    "stats": {
+      "fps": 17.7,
+      "leafMs": 0.71,
+      "blueprintMs": 0.14,
+      "leaves": 880
+    },
+    "assetVersion": "20260805-1425-centre-v1",
+    "numberLayout": {
+      "scale": 0.88,
+      "y": 201
+    },
+    "digitMeta": {
+      "tileWidth": 360,
+      "tileHeight": 480,
+      "digitY": 240,
+      "particleCount": 220,
+      "fontFamily": "Open Sans",
+      "fontWeight": 700,
+      "fontSize": 460,
+      "renderCentreY": 215,
+      "horizontalScale": 0.97,
+      "geometryScore": 0.03502052,
+      "opticallyCentred": true,
+      "tileCentre": [
+        180,
+        240
+      ],
+      "perDigitShift": [
+        {
+          "digit": 0,
+          "x": 0,
+          "y": 11,
+          "residualX": 0,
+          "residualY": 0
+        },
+        {
+          "digit": 1,
+          "x": 22,
+          "y": 11,
+          "residualX": -0.5,
+          "residualY": 0
+        },
+        {
+          "digit": 2,
+          "x": -2,
+          "y": 14,
+          "residualX": -1,
+          "residualY": 0.5
+        },
+        {
+          "digit": 3,
+          "x": 0,
+          "y": 11,
+          "residualX": -0.5,
+          "residualY": 0
+        },
+        {
+          "digit": 4,
+          "x": 0,
+          "y": 11,
+          "residualX": 0.5,
+          "residualY": 0
+        },
+        {
+          "digit": 5,
+          "x": -1,
+          "y": 8,
+          "residualX": 0,
+          "residualY": -0.5
+        },
+        {
+          "digit": 6,
+          "x": 0,
+          "y": 11,
+          "residualX": 0.5,
+          "residualY": 0
+        },
+        {
+          "digit": 7,
+          "x": 1,
+          "y": 11,
+          "residualX": -0.5,
+          "residualY": 0
+        },
+        {
+          "digit": 8,
+          "x": 0,
+          "y": 11,
+          "residualX": 0,
+          "residualY": 0
+        },
+        {
+          "digit": 9,
+          "x": 1,
+          "y": 11,
+          "residualX": 0,
+          "residualY": 0
+        }
+      ]
+    },
+    "leaves": [
+      {
+        "minX": 168,
+        "maxX": 316,
+        "minY": 44,
+        "maxY": 354,
+        "centreX": 242,
+        "centreY": 199,
+        "width": 149,
+        "height": 311
+      },
+      {
+        "minX": 596,
+        "maxX": 831,
+        "minY": 44,
+        "maxY": 358,
+        "centreX": 713.5,
+        "centreY": 201,
+        "width": 236,
+        "height": 315
+      },
+      {
+        "minX": 1088,
+        "maxX": 1309,
+        "minY": 48,
+        "maxY": 361,
+        "centreX": 1198.5,
+        "centreY": 204.5,
+        "width": 222,
+        "height": 314
+      },
+      {
+        "minX": 1578,
+        "maxX": 1781,
+        "minY": 41,
+        "maxY": 354,
+        "centreX": 1679.5,
+        "centreY": 197.5,
+        "width": 204,
+        "height": 314
+      }
+    ],
+    "outlines": [
+      {
+        "minX": 149,
+        "maxX": 349,
+        "minY": 39,
+        "maxY": 369,
+        "centreX": 249,
+        "centreY": 204,
+        "width": 201,
+        "height": 331
+      },
+      {
+        "minX": 592,
+        "maxX": 850,
+        "minY": 32,
+        "maxY": 368,
+        "centreX": 721,
+        "centreY": 200,
+        "width": 259,
+        "height": 337
+      },
+      {
+        "minX": 1077,
+        "maxX": 1328,
+        "minY": 39,
+        "maxY": 373,
+        "centreX": 1202.5,
+        "centreY": 206,
+        "width": 252,
+        "height": 335
+      },
+      {
+        "minX": 1560,
+        "maxX": 1792,
+        "minY": 25,
+        "maxY": 362,
+        "centreX": 1676,
+        "centreY": 193.5,
+        "width": 233,
+        "height": 338
+      }
+    ],
+    "resourceUrls": [
+      "http://127.0.0.1:8000/screen-8f2c6d71/fonts/PTSerif-Bold.ttf?v=20260805-1425-centre-v1",
+      "http://127.0.0.1:8000/screen-8f2c6d71/fonts/OpenSans-SemiBold.ttf?v=20260805-1425-centre-v1",
+      "http://127.0.0.1:8000/screen-8f2c6d71/digit_outlines_green.png?v=20260805-1425-centre-v1",
+      "http://127.0.0.1:8000/screen-8f2c6d71/digit_outlines_grey.png?v=20260805-1425-centre-v1",
+      "http://127.0.0.1:8000/screen-8f2c6d71/leaf_atlas.png?v=20260805-1425-centre-v1",
+      "http://127.0.0.1:8000/screen-8f2c6d71/style.css?v=20260805-1425-centre-v1",
+      "http://127.0.0.1:8000/screen-8f2c6d71/digit_targets.js?v=20260805-1425-centre-v1",
+      "http://127.0.0.1:8000/screen-8f2c6d71/clock.js?v=20260805-1425-centre-v1"
+    ]
+  },
+  "consoleErrors": [],
+  "pageErrors": []
+}

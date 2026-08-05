@@ -28,8 +28,8 @@
       }
     ],
     "stats": {
-      "fps": 19.7,
-      "leafMs": 0.64,
+      "fps": 20,
+      "leafMs": 0.63,
       "blueprintMs": 0.14,
       "leaves": 880
     },
@@ -213,12 +213,12 @@
     "leafBounds": [
       {
         "minX": 133,
-        "maxX": 343,
+        "maxX": 342,
         "minY": 44,
         "maxY": 352,
-        "centreX": 238,
+        "centreX": 237.5,
         "centreY": 198,
-        "width": 211,
+        "width": 210,
         "height": 309
       },
       {
@@ -274,13 +274,13 @@
         "height": 338
       },
       {
-        "minX": 1084,
-        "maxX": 1318,
+        "minX": 1085,
+        "maxX": 1317,
         "minY": 38,
         "maxY": 370,
         "centreX": 1201,
         "centreY": 204,
-        "width": 235,
+        "width": 233,
         "height": 333
       },
       {
@@ -323,9 +323,9 @@
       }
     ],
     "stats": {
-      "fps": 19.4,
+      "fps": 20.3,
       "leafMs": 0.62,
-      "blueprintMs": 0.15,
+      "blueprintMs": 0.13,
       "leaves": 880
     },
     "footerFont": true,
@@ -508,54 +508,54 @@
     "leafBounds": [
       {
         "minX": 133,
-        "maxX": 342,
+        "maxX": 343,
         "minY": 43,
-        "maxY": 352,
-        "centreX": 237.5,
-        "centreY": 197.5,
-        "width": 210,
-        "height": 310
+        "maxY": 349,
+        "centreX": 238,
+        "centreY": 196,
+        "width": 211,
+        "height": 307
       },
       {
         "minX": 612,
-        "maxX": 828,
+        "maxX": 829,
         "minY": 43,
-        "maxY": 351,
-        "centreX": 720,
-        "centreY": 197,
-        "width": 217,
-        "height": 309
-      },
-      {
-        "minX": 1092,
-        "maxX": 1306,
-        "minY": 45,
-        "maxY": 354,
-        "centreX": 1199,
-        "centreY": 199.5,
-        "width": 215,
+        "maxY": 352,
+        "centreX": 720.5,
+        "centreY": 197.5,
+        "width": 218,
         "height": 310
       },
       {
-        "minX": 1570,
-        "maxX": 1788,
-        "minY": 46,
+        "minX": 1092,
+        "maxX": 1303,
+        "minY": 48,
         "maxY": 354,
-        "centreX": 1679,
-        "centreY": 200,
-        "width": 219,
-        "height": 309
+        "centreX": 1197.5,
+        "centreY": 201,
+        "width": 212,
+        "height": 307
+      },
+      {
+        "minX": 1570,
+        "maxX": 1789,
+        "minY": 46,
+        "maxY": 355,
+        "centreX": 1679.5,
+        "centreY": 200.5,
+        "width": 220,
+        "height": 310
       }
     ],
     "blueprintBounds": [
       {
-        "minX": 123,
+        "minX": 124,
         "maxX": 360,
         "minY": 37,
         "maxY": 371,
-        "centreX": 241.5,
+        "centreX": 242,
         "centreY": 204,
-        "width": 238,
+        "width": 237,
         "height": 335
       },
       {
@@ -572,21 +572,21 @@
         "minX": 1085,
         "maxX": 1317,
         "minY": 37,
-        "maxY": 370,
+        "maxY": 371,
         "centreX": 1201,
-        "centreY": 203.5,
+        "centreY": 204,
         "width": 233,
-        "height": 334
+        "height": 335
       },
       {
-        "minX": 1560,
+        "minX": 1561,
         "maxX": 1799,
-        "minY": 31,
+        "minY": 32,
         "maxY": 364,
-        "centreX": 1679.5,
-        "centreY": 197.5,
-        "width": 240,
-        "height": 334
+        "centreX": 1680,
+        "centreY": 198,
+        "width": 239,
+        "height": 333
       }
     ]
   },

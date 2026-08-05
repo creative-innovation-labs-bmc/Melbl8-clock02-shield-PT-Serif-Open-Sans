@@ -56,6 +56,11 @@ const FRAME_MS = 1000 / CFG.targetFps;
 const PARTICLES_PER_ZONE = CFG.particlesPerZone;
 const TOTAL_PARTICLES = PARTICLES_PER_ZONE * 4;
 const BG = '#1C1B1C';
+const ASSET_VERSION = '20260805-1425-centre-v1';
+window.CLOCK_ASSET_VERSION = ASSET_VERSION;
+function assetUrl(path) {
+  return `${path}?v=${ASSET_VERSION}`;
+}
 
 const OUTLINE_TILE_W = 360;
 const OUTLINE_TILE_H = 480;
@@ -515,9 +520,9 @@ async function start() {
   if (!targetData || !targetData.targets) throw new Error('Digit target data is missing');
 
   const [greyImage, greenImage, leafImage] = await Promise.all([
-    loadImage('digit_outlines_grey.png'),
-    loadImage('digit_outlines_green.png'),
-    loadImage('leaf_atlas.png')
+    loadImage(assetUrl('digit_outlines_grey.png')),
+    loadImage(assetUrl('digit_outlines_green.png')),
+    loadImage(assetUrl('leaf_atlas.png'))
   ]);
 
   [outlineGrey, outlineGreen, leafAtlas] = await Promise.all([
@@ -527,8 +532,8 @@ async function start() {
   ]);
 
   await Promise.all([
-    loadOptionalFont('ClockFooter', 'fonts/PTSerif-Bold.ttf', 20, 700),
-    loadOptionalFont('ClockSide', 'fonts/OpenSans-SemiBold.ttf', 8, 600)
+    loadOptionalFont('ClockFooter', assetUrl('fonts/PTSerif-Bold.ttf'), 20, 700),
+    loadOptionalFont('ClockSide', assetUrl('fonts/OpenSans-SemiBold.ttf'), 8, 600)
   ]);
 
   initialiseParticles();
