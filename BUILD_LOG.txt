@@ -1,8 +1,9 @@
-Cloning into '/tmp/clock-font-build-pnj7e7mr/source'...
+Cloning into '/tmp/clock-font-build-ekhc1vod/source'...
 From https://github.com/creative-innovation-labs-bmc/Melbl8-clock02-shield
  * branch            bc0416e62e711af0d3aaa3af2ac2cb30cfd77a8f -> FETCH_HEAD
 HEAD is now at bc0416e number y
 Optically centred all ten large numeral assets at canvas y: 201.
+Versioned all browser assets with 20260805-1425-centre-v1.
 {
   "fixedDisplayTime": "08:08:08",
   "native": {
@@ -34,8 +35,8 @@ Optically centred all ten large numeral assets at canvas y: 201.
     ],
     "stats": {
       "fps": 19.7,
-      "leafMs": 0.64,
-      "blueprintMs": 0.14,
+      "leafMs": 0.65,
+      "blueprintMs": 0.11,
       "leaves": 880
     },
     "footerFont": true,
@@ -230,11 +231,11 @@ Optically centred all ten large numeral assets at canvas y: 201.
         "minX": 612,
         "maxX": 828,
         "minY": 43,
-        "maxY": 351,
+        "maxY": 352,
         "centreX": 720,
-        "centreY": 197,
+        "centreY": 197.5,
         "width": 217,
-        "height": 309
+        "height": 310
       },
       {
         "minX": 1092,
@@ -328,9 +329,9 @@ Optically centred all ten large numeral assets at canvas y: 201.
       }
     ],
     "stats": {
-      "fps": 19.4,
+      "fps": 20.3,
       "leafMs": 0.62,
-      "blueprintMs": 0.15,
+      "blueprintMs": 0.12,
       "leaves": 880
     },
     "footerFont": true,
@@ -513,23 +514,23 @@ Optically centred all ten large numeral assets at canvas y: 201.
     "leafBounds": [
       {
         "minX": 133,
-        "maxX": 342,
-        "minY": 43,
+        "maxX": 343,
+        "minY": 44,
         "maxY": 352,
-        "centreX": 237.5,
-        "centreY": 197.5,
-        "width": 210,
-        "height": 310
+        "centreX": 238,
+        "centreY": 198,
+        "width": 211,
+        "height": 309
       },
       {
         "minX": 612,
         "maxX": 828,
         "minY": 43,
-        "maxY": 351,
+        "maxY": 352,
         "centreX": 720,
-        "centreY": 197,
+        "centreY": 197.5,
         "width": 217,
-        "height": 309
+        "height": 310
       },
       {
         "minX": 1092,
@@ -599,3 +600,11 @@ Optically centred all ten large numeral assets at canvas y: 201.
   "pageErrors": [],
   "remoteRequests": []
 }
+14:25 QC failed: {'fps': 17.4, 'leafMs': 0.66, 'blueprintMs': 0.12, 'leaves': 880}
+Traceback (most recent call last):
+  File "/home/runner/work/Melbl8-clock02-shield-PT-Serif-Open-Sans/Melbl8-clock02-shield-PT-Serif-Open-Sans/tools/qc_1425.py", line 171, in <module>
+    main()
+  File "/home/runner/work/Melbl8-clock02-shield-PT-Serif-Open-Sans/Melbl8-clock02-shield-PT-Serif-Open-Sans/tools/qc_1425.py", line 116, in main
+    assert result["stats"]["fps"] >= 18, result["stats"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fps': 17.4, 'leafMs': 0.66, 'blueprintMs': 0.12, 'leaves': 880}

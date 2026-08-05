@@ -1,5 +1,5 @@
 # Build status
 
-Result: success
-Recorded: 2026-08-04T20:55:56Z
-Source workflow commit: c78a22c134a5a3a5ba72afcef690c824d7c446f0
+Result: failure
+Recorded: 2026-08-05T04:33:09Z
+Source workflow commit: 30eb518aa7e6472f3aa6bd77ff423c10f083cc7a
