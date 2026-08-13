@@ -1,0 +1,60 @@
+name: One-time font cleanup
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remove non-approved font fallbacks
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          js = Path('screen-8f2c6d71/clock.js')
+          text = js.read_text()
+          replacements = {
+              "let footerFont = '700 20px Georgia, serif';": "let footerFont = '700 20px \"PT Serif\"';",
+              "let sideFont = '600 8px Arial, sans-serif';": "let sideFont = '600 8px \"Open Sans\"';",
+              "if (name === 'ClockFooter') footerFont": "if (name === 'PT Serif') footerFont",
+              "if (name === 'ClockSide') sideFont": "if (name === 'Open Sans') sideFont",
+              "loadOptionalFont('ClockFooter', assetUrl('fonts/PTSerif-Bold.ttf'), 20, 700)": "loadOptionalFont('PT Serif', assetUrl('fonts/PTSerif-Bold.ttf'), 20, 700)",
+              "loadOptionalFont('ClockSide', assetUrl('fonts/OpenSans-SemiBold.ttf'), 8, 600)": "loadOptionalFont('Open Sans', assetUrl('fonts/OpenSans-SemiBold.ttf'), 8, 600)",
+          }
+          for old, new in replacements.items():
+              if old not in text:
+                  raise SystemExit(f'Missing expected Clock 02 font pattern: {old}')
+              text = text.replace(old, new)
+          js.write_text(text)
+
+          css = Path('screen-8f2c6d71/style.css')
+          text = css.read_text()
+          old = 'font: 12px/1.2 monospace;'
+          if old not in text:
+              raise SystemExit('Missing debug font pattern')
+          css.write_text(text.replace(old, 'font: 600 12px/1.2 "Open Sans";'))
+          PY
+
+          ! grep -RInE 'Arial|Helvetica|Georgia|Times New Roman|Noto Serif|monospace|Meta Serif|Meta Sans|Bitter|Aptos|Roboto|MP-B' screen-8f2c6d71 --include='*.html' --include='*.css' --include='*.js'
+          while IFS= read -r f; do
+            case "$(basename "$f")" in
+              OpenSans-*|PTSerif-*|PT_Serif-*) ;;
+              *) echo "Unapproved font asset: $f"; exit 1 ;;
+            esac
+          done < <(find screen-8f2c6d71/fonts -type f \( -name '*.ttf' -o -name '*.otf' -o -name '*.woff' -o -name '*.woff2' \))
+
+          rm .github/workflows/font-cleanup.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Remove legacy font fallbacks"
+          git push
