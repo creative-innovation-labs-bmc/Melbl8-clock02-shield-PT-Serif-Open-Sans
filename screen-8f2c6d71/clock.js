@@ -122,8 +122,8 @@ let targetData = null;
 let outlineGrey = null;
 let outlineGreen = null;
 let leafAtlas = null;
-let footerFont = '700 20px Georgia, serif';
-let sideFont = '600 8px Arial, sans-serif';
+let footerFont = '700 20px "PT Serif"';
+let sideFont = '600 8px "Open Sans"';
 const FOOTER_X_SCALE = 1.0244;
 const SIDE_X_SCALE = 0.9219;
 let lastSecond = -1;
@@ -186,8 +186,8 @@ async function loadOptionalFont(name, url, cssValue, weight) {
     });
     await face.load();
     document.fonts.add(face);
-    if (name === 'ClockFooter') footerFont = `${weight} ${cssValue}px "${name}"`;
-    if (name === 'ClockSide') sideFont = `${weight} ${cssValue}px "${name}"`;
+    if (name === 'PT Serif') footerFont = `${weight} ${cssValue}px "${name}"`;
+    if (name === 'Open Sans') sideFont = `${weight} ${cssValue}px "${name}"`;
     return true;
   } catch {
     return false;
@@ -532,8 +532,8 @@ async function start() {
   ]);
 
   await Promise.all([
-    loadOptionalFont('ClockFooter', assetUrl('fonts/PTSerif-Bold.ttf'), 20, 700),
-    loadOptionalFont('ClockSide', assetUrl('fonts/OpenSans-SemiBold.ttf'), 8, 600)
+    loadOptionalFont('PT Serif', assetUrl('fonts/PTSerif-Bold.ttf'), 20, 700),
+    loadOptionalFont('Open Sans', assetUrl('fonts/OpenSans-SemiBold.ttf'), 8, 600)
   ]);
 
   initialiseParticles();

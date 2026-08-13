@@ -40,6 +40,6 @@ canvas {
   border-radius: 4px;
   background: rgba(0,0,0,0.75);
   color: #fff;
-  font: 12px/1.2 monospace;
+  font: 600 12px/1.2 "Open Sans";
   pointer-events: none;
 }
